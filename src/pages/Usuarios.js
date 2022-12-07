@@ -1,6 +1,6 @@
-import React from 'react';
 
-const Usuarios = props => {
+
+function Usuarios(props) {
     return (
         <div>
             

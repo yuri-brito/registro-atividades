@@ -1,6 +1,6 @@
-import React from 'react';
 
-const AtividadesDetalhes = (props) => {
+
+function AtividadesDetalhes (props) {
     return (
         <div>
             
