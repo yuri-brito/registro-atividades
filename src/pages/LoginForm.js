@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { api } from "../api/api.js";
+import api from "../api/api.js";
 import { AuthContext } from "../contexts/authContext";
 function LoginForm(props) {
   const navigate = useNavigate();
@@ -25,6 +25,9 @@ function LoginForm(props) {
       const response = await api.post("/usuario/login", loginForm);
       setLoggedUser({ ...response.data });
       localStorage.setItem("loggedUser", JSON.stringify(response.data));
+      if (response.data.user.role === "admin") {
+        navigate("/admin");
+      }
       navigate("/perfil");
     } catch (error) {}
   }

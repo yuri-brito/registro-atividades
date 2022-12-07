@@ -6,9 +6,10 @@ import UsuariosDetalhes from "./pages/UsuariosDetalhes";
 import Atividades from "./pages/Atividades";
 import AtividadesDetalhes from "./pages/AtividadesDetalhes";
 import Navegacao from "./components/Navegacao";
-import { Spinner } from "react-bootstrap";
+import { Spinner, Toast } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Toaster } from "react-hot-toast";
 import LoginForm from "./pages/LoginForm";
 import Logout from "./pages/Logout";
 import Register from "./pages/Register";
@@ -34,6 +35,7 @@ function App() {
           setIdUser={setIdUser}
         />
       )} */}
+      <Toaster></Toaster>
       <AuthContextComponent>
         <Routes>
           <Route path="/" element={<Home />} />

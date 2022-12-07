@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-const AuthContext = createContext({ user: {}, token: "" });
+const AuthContext = createContext();
 
 function AuthContextComponent(props) {
   const [loggedUser, setLoggedUser] = useState({

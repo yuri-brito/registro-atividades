@@ -8,11 +8,17 @@ import {
   Navbar,
   Row,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/authContext";
 
 function Profile() {
-  const { loggedUser } = useContext(AuthContext);
+  const { loggedUser, setLoggedUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  function signOut() {
+    localStorage.removeItem("loggedUser");
+    setLoggedUser(null);
+    navigate("/");
+  }
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -30,6 +36,11 @@ function Profile() {
       </Navbar>
 
       <Container className="mt-5">
+        <img
+          src={loggedUser.user.profileImg}
+          alt="imagem de perfil"
+          width={100}
+        />
         <h1>Nome do usuário</h1>
         <h6 className="fw-bold text-muted">Ativo na empresa desde DD/MM/YYY</h6>
         <Row className="my-4">
@@ -41,10 +52,8 @@ function Profile() {
             </Button>
           </Col>
           <Col>
-            <Button variant="danger">
-              <Link className="nav-link" to="/delete-profile">
-                Excluir perfil
-              </Link>
+            <Button variant="dark" onClick={signOut}>
+              Sign out
             </Button>
           </Col>
         </Row>
