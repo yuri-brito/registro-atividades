@@ -52,7 +52,7 @@ const Register = (props) => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
           <Form.Label>Nome Completo</Form.Label>
           <Form.Control
             type="text"
@@ -62,7 +62,7 @@ const Register = (props) => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
           <Form.Label>Endereço de email</Form.Label>
           <Form.Control
             type="email"
@@ -72,7 +72,7 @@ const Register = (props) => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
           <Form.Label>Imagem de perfil</Form.Label>
           <Form.Control
             type="file"
@@ -81,7 +81,7 @@ const Register = (props) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3">
           <Form.Label>Senha</Form.Label>
           <Form.Control
             type="password"
@@ -91,7 +91,7 @@ const Register = (props) => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3">
           <Form.Label>Confirmar Senha</Form.Label>
           <Form.Control
             type="password"

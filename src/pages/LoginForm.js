@@ -23,13 +23,17 @@ function LoginForm(props) {
     e.preventDefault();
     try {
       const response = await api.post("/usuario/login", loginForm);
+
       setLoggedUser({ ...response.data });
       localStorage.setItem("loggedUser", JSON.stringify(response.data));
-      if (response.data.user.role === "admin") {
-        navigate("/admin");
-      }
+      // if (response.data.user.role === "admin") {
+      //   navigate("/admin");
+      // }
       navigate("/perfil");
-    } catch (error) {}
+    } catch (error) {
+      toast.error(error.response.data.msg);
+      return;
+    }
   }
   return (
     <Container

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiURL = {
   development: "http://localhost:8080",
-  production: "LINK DO SERVER DEPLOYADO VAI AQUI",
+  production: "https://fair-pink-cockroach-cuff.cyclic.app",
 };
 
 const api = axios.create({ baseURL: apiURL[process.env.NODE_ENV] });
